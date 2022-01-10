@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Transaksi extends Model
+{
+    use HasFactory;
+
+    protected $guarded = ['id'];
+
+    public function produk(){
+        return $this->belongsTo(Products::class, 'id_produk');
+    }
+}
+
